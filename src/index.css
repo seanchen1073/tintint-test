@@ -290,3 +290,193 @@ body {
   color: #999;
   font-style: italic;
 }
+
+/* 分頁標題樣式 */
+.flip-page-title {
+  background-color: #a1ceb1;
+  padding-left: 20px;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: start;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+/* 書本翻頁區域樣式 */
+.book-flip-section {
+  width: 900px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 書本容器樣式 */
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 書本樣式 */
+.book {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* 載入提示樣式 */
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #666;
+}
+
+/* 書本頁面樣式 */
+.book-pages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+/* 書本頁面展開樣式 */
+.spread {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transform-style: preserve-3d;
+}
+
+/* 當前頁面樣式 */
+.current-spread {
+  z-index: 1;
+}
+
+/* 下一頁樣式 */
+.next-spread {
+  z-index: 0;
+}
+
+/* 頁面樣式 */
+.page {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: white;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* 左頁面樣式 */
+.page-left {
+  border-right: 1px solid #ddd;
+}
+
+/* 右頁面樣式 */
+.page-right {
+  border-left: 1px solid #ddd;
+}
+
+/* 空頁面樣式 */
+.empty-page {
+  background-color: #f0f0f0;
+}
+
+/* 頁面圖片樣式 */
+.page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* 翻頁動畫 */
+.flipping-next .current-spread {
+  animation: flipOutNext 0.3s ease-in-out forwards;
+}
+
+.flipping-prev .current-spread {
+  animation: flipOutPrev 0.3s ease-in-out forwards;
+}
+
+/* 翻頁動畫 keyframes */
+@keyframes flipOutNext {
+  0% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutPrev {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+/* 控制區域樣式 */
+.controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 控制按鈕樣式 */
+.control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* 控制按鈕 hover 效果 */
+.control-button:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 控制按鈕禁用樣式 */
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 頁碼樣式 */
+.page-number {
+  font-size: 16px;
+  color: #666;
+  min-width: 80px;
+  text-align: center;
+}

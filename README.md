@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# 黑米數位模擬任務題目
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 【題目一】上傳相片並顯示
 
-## Available Scripts
+請設計並完成一個相片上傳功能，包含以下要求：
 
-In the project directory, you can run:
+1. **上傳圖片**：介面中有一個「選擇檔案」按鈕，使用者可以透過此按鈕選擇一張圖片檔案。
+2. **圖片預覽**：成功選擇圖片後，頁面需即時顯示該圖片的縮圖。
+3. **未選擇圖片**：若使用者未選擇圖片，則顯示文字「未選擇圖片」。
+4. **檔案類型錯誤**：若使用者選擇的檔案並非圖片格式（例如.txt 或.pdf），則顯示文字「檔案類型錯誤」。
 
-### `npm start`
+### 注意事項：
+- 圖片只需在前端即時顯示，無需上傳至伺服器。
+- 介面外觀設計可簡單化，但功能需完整實現，並確保相片顯示及錯誤處理的邏輯正確。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 【題目二】: 動態篩選
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+請設計並完成一個資料篩選功能，包含以下要求：
 
-### `npm test`
+1. **靜態資料**：在程式碼內建立一組靜態的假資料，資料結構為{ id:數字, name:名字}，至少包含50筆不同的資料。
+   - 範例：`[{ id:1, name:'John' }, { id:2, name:'Andy' }, ...]`。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **輸入框篩選**：頁面上需提供一個文字輸入框，使用者在輸入框中輸入文字後，列表需即時顯示名稱中包含該文字的資料。
+   - 例如，使用者輸入「Jo」時，篩選結果應顯示 `John` 等包含「Jo」的項目。
 
-### `npm run build`
+3. **清空狀態**：若輸入框為空，則顯示完整的資料列表。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 注意事項：
+- 篩選功能需即時運作，使用者輸入的每個字母都能更新顯示結果。
+- 請確保程式執行時不會因大量資料而變得卡頓（建議考慮優化，例如利用緩存機制）。
+- 介面外觀設計可簡單化，但需正確呈現篩選後的結果。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 【題目三】: 翻書效果圖片輪播
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+請設計並完成一個具有翻書動畫效果的圖片輪播，包含以下要求：
 
-### `npm run eject`
+1. **使用線上圖片素材**：使用線上placeholder圖片服務（如: via.placeholder.com），提供12張不同的圖片作為內容。
+   - 圖片尺寸可設為300 x 200（或其他你認為合適的大小）。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **翻書動畫效果**：每張圖片輪播時須具備「翻書」動畫效果，模擬書本翻頁的視覺感受。
+   - 書可以有封面和封底，也可以直接是打開的書本狀態。
+   - 書內的圖片，可以是左右合為一張圖、或左右各自一張圖、或僅右頁為一張圖也行（參考「隨手翻」產品）。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **互動功能**：使用者可透過按鈕、或滑鼠滑動、或手勢進行切換圖片。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 注意事項：
+- 請確保動畫流暢不會卡頓。
+- 可使用任何前端動畫工具或第三方套件來實現效果。
+- 介面外觀設計可簡單化。
